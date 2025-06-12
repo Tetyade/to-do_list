@@ -1,30 +1,111 @@
 QWidget {
-    background-color: #1e1e1e;
-    color: #ffffff;
-    font-family: "Segoe UI", sans-serif;
-    font-size: 14px;
-}
-
-QLineEdit {
-    background-color: #2d2d2d;
-    padding: 5px;
-    border: 1px solid #555;
-    border-radius: 5px;
-}
-
-QPushButton {
-    background-color: #0078d7;
+    background-color: #0d0d0d;
     color: white;
-    padding: 6px;
-    border-radius: 5px;
+    font-family: Audiowide;
+    font-size: 10pt;
 }
 
+QLabel#title_label {
+    color: #00ffff;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ff00ff;
+    margin-bottom: 10px;
+    font-size: 24pt;
+    font-weight: bold;
+}
+
+/* QLineEdit (поле введення) */
+QLineEdit {
+    background: #1f1f1f;
+    color: #00ffff;
+    padding: 10px 15px;
+    border: 1px solid #ff00ff;
+    border-radius: 5px;
+    selection-background-color: #ff00ff;
+    selection-color: black;
+}
+QLineEdit:focus {
+    border: 2px solid #00ffff;
+}
+
+/* QPushButton (кнопка "INITIATE") */
+QPushButton {
+    background-color: #ff00ff;
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    min-width: 80px;
+    font-weight: bold;
+}
 QPushButton:hover {
-    background-color: #005fa1;
+    background-color: #00ffff;
+}
+QPushButton:pressed {
+    background-color: #00ff00;
 }
 
+/* QListWidget (список завдань) */
 QListWidget {
-    background-color: #2b2b2b;
-    border: 1px solid #555;
+    border: none;
+    border-radius: 8px;
+    padding: 5px;
+    outline: 0;
+}
+
+/* Стилізація окремих елементів QListWidget (кожного завдання) */
+QListWidget::item {
+    margin-bottom: 8px;
+}
+
+/* QCheckBox (чекбокс у TaskWidget) */
+QCheckBox::indicator {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #00ffff;
+    border-radius: 4px;
+}
+QCheckBox::indicator:checked {
+    background-color: #ff00ff;
+    border: 2px solid #ff00ff;
+    image: url(assets/icons/checkmark.png);
+}
+QCheckBox {
+    spacing: 10px;
+}
+
+/* QLabel у TaskWidget (для назви завдання) */
+QLabel {
+    background: transparent;
+}
+
+/* Стилі для TaskWidget (самого віджета завдання) */
+QWidget#task_widget {
+    border: 1px solid #ff00ff;
     border-radius: 5px;
+    padding: 12px 15px;
+}
+QWidget#task_widget:hover {
+    border: 1px solid #00ffff;
+}
+
+/* Стиль для кнопки видалення всередині TaskWidget */
+QPushButton#delete_button {
+    background-color: rgba(255, 0, 0, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 0, 0, 0.4);
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 9pt;
+    text-align: center;
+    padding: 0px;
+}
+QPushButton#delete_button:hover {
+    background-color: #ff0000;
+    border: 1px solid #ff0000;
+    color: black;
+}
+QPushButton#delete_button:pressed {
+    background-color: #990000;
+    border: 1px solid #990000;
 }
